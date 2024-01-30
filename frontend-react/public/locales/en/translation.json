@@ -1,0 +1,116 @@
+{
+    "from-to": "Elements from {first} to {last} (total {totalRecords})",
+    "new" : "New",
+    "search": "Search",
+    "export": "Export",
+    "validate": "Validate",
+    "search": "Seach...",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "save": "Save",
+    "next": "Next",
+    "yes": "Yes",
+    "no": "No",
+    "actions": "Actions",
+    "confirm": "Confirm",
+    "creation": "Creation",
+    "list": "List",
+
+
+    "client":{
+        "cin": "Cin",
+        "nom": "Nom",
+        "tel": "Tel",
+        "email": "Email",
+        "adresse": "Adresse",
+        "description": "Description",
+        "creance": "Creance",
+        "creanceMin": "Creance Min",
+        "creanceMax": "Creance Max",
+        "client": "Client",
+        "tabPan": "Client",
+        "header": "Liste des clients",
+        "deleteClientConfirmationMessage": "Are you sure you want to delete client",
+        "deleteClientsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "achat":{
+        "reference": "Reference",
+        "dateAchat": "Date achat",
+        "dateAchatMin": "Date achat Min",
+        "dateAchatMax": "Date achat Max",
+        "total": "Total",
+        "totalMin": "Total Min",
+        "totalMax": "Total Max",
+        "totalPaye": "Total paye",
+        "totalPayeMin": "Total paye Min",
+        "totalPayeMax": "Total paye Max",
+        "description": "Description",
+        "client": "Client",
+        "clientPlaceHolder": "Select a Client",
+        "clientPlaceHolderFilter": "Search by Client",
+        "achatItems": "Achat items",
+        "achat": "Achat",
+        "tabPan": "Achat",
+        "header": "Liste des achats",
+        "deleteAchatConfirmationMessage": "Are you sure you want to delete achat",
+        "deleteAchatsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "achatItem":{
+        "produit": "Produit",
+        "produitPlaceHolder": "Select a Produit",
+        "produitPlaceHolderFilter": "Search by Produit",
+        "prixUnitaire": "Prix unitaire",
+        "prixUnitaireMin": "Prix unitaire Min",
+        "prixUnitaireMax": "Prix unitaire Max",
+        "prixVente": "Prix vente",
+        "prixVenteMin": "Prix vente Min",
+        "prixVenteMax": "Prix vente Max",
+        "quantite": "Quantite",
+        "quantiteMin": "Quantite Min",
+        "quantiteMax": "Quantite Max",
+        "quantiteAvoir": "Quantite avoir",
+        "quantiteAvoirMin": "Quantite avoir Min",
+        "quantiteAvoirMax": "Quantite avoir Max",
+        "remise": "Remise",
+        "remiseMin": "Remise Min",
+        "remiseMax": "Remise Max",
+        "achat": "Achat",
+        "achatPlaceHolder": "Select a Achat",
+        "achatPlaceHolderFilter": "Search by Achat",
+        "achatItem": "Achat item",
+        "tabPan": "Achat item",
+        "header": "Liste des achat items",
+        "deleteAchatItemConfirmationMessage": "Are you sure you want to delete achat item",
+        "deleteAchatItemsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "produit":{
+        "reference": "Reference",
+        "libelle": "Libelle",
+        "barcode": "Barcode",
+        "discription": "Discription",
+        "prixAchatMoyen": "Prix achat moyen",
+        "prixAchatMoyenMin": "Prix achat moyen Min",
+        "prixAchatMoyenMax": "Prix achat moyen Max",
+        "quantite": "Quantite",
+        "quantiteMin": "Quantite Min",
+        "quantiteMax": "Quantite Max",
+        "seuilAlert": "Seuil alert",
+        "seuilAlertMin": "Seuil alert Min",
+        "seuilAlertMax": "Seuil alert Max",
+        "produit": "Produit",
+        "tabPan": "Produit",
+        "header": "Liste des produits",
+        "deleteProduitConfirmationMessage": "Are you sure you want to delete produit",
+        "deleteProduitsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+"appName": "GED"
+}
+
+

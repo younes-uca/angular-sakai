@@ -1,0 +1,80 @@
+        <p-dialog [(visible)]="editDialog" [style]="{width: '70vw'}" header="{{'achatItem.tabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                <p-tabView>
+                    <p-tabPanel header="{{'achatItem.tabPan' | translate}}">
+                        <div class="grid">
+
+                                    <div class="field col-11 md:col-6">
+                                        <label for="1">{{'achatItem.produit' | translate}}<span style="color: red;">*</span></label>
+                                        <p-dropdown  appendTo="body"  [options]="produits" [(ngModel)]="item.produit" id="1" [filter]="true" filterMatchMode="contains"
+                                                [showClear]="true" optionLabel="reference" placeholder="{{'achatItem.produit' | translate}}" [ngClass]="{'ng-invalid ng-dirty' : !validAchatItemProduit}"  >
+                                        </p-dropdown>
+                                        <small class='p-error' *ngIf='!validAchatItemProduit'>Produit est obligatoire.</small>
+                                    </div>
+                                        <div class="field col-12 md:col-6">
+                                            <label for="2">{{'achatItem.prixUnitaire' | translate}}<span style="color: red;">*</span></label>
+                                            <p-inputNumber class="mb-2 mr-2" id="2" placeholder="{{'achatItem.prixUnitaire' | translate}}" [(ngModel)]="item.prixUnitaire" [ngClass]="{'ng-invalid ng-dirty' : !validAchatItemPrixUnitaire}"  >
+                                            </p-inputNumber>
+                                            <small class='p-error' *ngIf='!validAchatItemPrixUnitaire'>PrixUnitaire est obligatoire.</small>
+                                        </div>
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="3">{{'achatItem.prixVente' | translate}}<span style="color: red;">*</span></label>
+                                            <p-inputNumber class="mb-2 mr-2" id="3" placeholder="{{'achatItem.prixVente' | translate}}" [(ngModel)]="item.prixVente" [ngClass]="{'ng-invalid ng-dirty' : !validAchatItemPrixVente}"  >
+                                            </p-inputNumber>
+                                            <small class='p-error' *ngIf='!validAchatItemPrixVente'>PrixVente est obligatoire.</small>
+                                        </div>
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="4">{{'achatItem.quantite' | translate}}<span style="color: red;">*</span></label>
+                                            <p-inputNumber class="mb-2 mr-2" id="4" placeholder="{{'achatItem.quantite' | translate}}" [(ngModel)]="item.quantite" [ngClass]="{'ng-invalid ng-dirty' : !validAchatItemQuantite}"  >
+                                            </p-inputNumber>
+                                            <small class='p-error' *ngIf='!validAchatItemQuantite'>Quantite est obligatoire.</small>
+                                        </div>
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="5">{{'achatItem.quantiteAvoir' | translate}}</label>
+                                            <p-inputNumber class="mb-2 mr-2" id="5" placeholder="{{'achatItem.quantiteAvoir' | translate}}" [(ngModel)]="item.quantiteAvoir"  >
+                                            </p-inputNumber>
+                                            
+                                        </div>
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="6">{{'achatItem.remise' | translate}}</label>
+                                            <p-inputNumber class="mb-2 mr-2" id="6" placeholder="{{'achatItem.remise' | translate}}" [(ngModel)]="item.remise"  >
+                                            </p-inputNumber>
+                                            
+                                        </div>
+
+                                    <div class="field col-11 md:col-5">
+                                        <label for="7">{{'achatItem.achat' | translate}}</label>
+                                        <p-dropdown  appendTo="body"  [options]="achats" [(ngModel)]="item.achat" id="7" [filter]="true" filterMatchMode="contains"
+                                                [showClear]="true" optionLabel="reference" placeholder="{{'achatItem.achat' | translate}}"  >
+                                        </p-dropdown>
+                                        
+                                    </div>
+                                        <div class="col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateAchat('Achat')" class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+                        </div>
+                    </p-tabPanel>
+
+                </p-tabView>
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="grid-footer">
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideEditDialog()"></button>
+                        </div>
+                    <div>
+                        <button pButton pRipple label="Valider" icon="pi pi-check" style="margin:10px" (click)="edit()"></button>
+                    </div>
+                </div>
+            </ng-template>
+
+                    <app-achat-create-admin></app-achat-create-admin>
+
+
+    </p-dialog>

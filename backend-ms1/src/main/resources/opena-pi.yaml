@@ -1,0 +1,376 @@
+openapi: 3.0.3
+info:
+  title: Title
+  description: Title
+  version: 1.0.0
+servers:
+  - url: 'https'
+paths:
+  /clients:
+    get:
+      summary: List all clients
+      operationId: listClients
+      tags:
+        - clients
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of clients
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Clients'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a client
+      operationId: createClients
+      tags:
+        - clients
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /clients/{clientId}:
+    get:
+      summary: Info for a specific client
+      operationId: showClientById
+      tags:
+        - clients
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          description: The id of the client to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Clients'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /achats:
+    get:
+      summary: List all achats
+      operationId: listAchats
+      tags:
+        - achats
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of achats
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Achats'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a achat
+      operationId: createAchats
+      tags:
+        - achats
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /achats/{achatId}:
+    get:
+      summary: Info for a specific achat
+      operationId: showAchatById
+      tags:
+        - achats
+      parameters:
+        - name: achatId
+          in: path
+          required: true
+          description: The id of the achat to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Achats'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /achatItems:
+    get:
+      summary: List all achatItems
+      operationId: listAchatItems
+      tags:
+        - achatItems
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of achatItems
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/AchatItems'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a achatItem
+      operationId: createAchatItems
+      tags:
+        - achatItems
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /achatItems/{achatItemId}:
+    get:
+      summary: Info for a specific achatItem
+      operationId: showAchatItemById
+      tags:
+        - achatItems
+      parameters:
+        - name: achatItemId
+          in: path
+          required: true
+          description: The id of the achatItem to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/AchatItems'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /produits:
+    get:
+      summary: List all produits
+      operationId: listProduits
+      tags:
+        - produits
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of produits
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Produits'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a produit
+      operationId: createProduits
+      tags:
+        - produits
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /produits/{produitId}:
+    get:
+      summary: Info for a specific produit
+      operationId: showProduitById
+      tags:
+        - produits
+      parameters:
+        - name: produitId
+          in: path
+          required: true
+          description: The id of the produit to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Produits'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  
+
+
+definitions:
+  Client:
+    type: "object"
+    required:
+      - id
+      - cin
+      - nom
+      - tel
+      - email
+      - adresse
+      - description
+      - creance
+    properties:
+      id:
+        type: int
+      cin:
+        type: string
+      nom:
+        type: string
+      tel:
+        type: string
+      email:
+        type: string
+      adresse:
+        type: string
+      description:
+        type: string
+      creance:
+        type: number
+  Clients:
+    type: array
+    items:
+      $ref: '#/definitions/Client'
+  Achat:
+    type: "object"
+    required:
+      - id
+      - reference
+      - dateAchat
+      - total
+      - totalPaye
+      - description
+    properties:
+      id:
+        type: int
+      reference:
+        type: string
+      dateAchat:
+        type: date
+      total:
+        type: number
+      totalPaye:
+        type: number
+      description:
+        type: string
+  Achats:
+    type: array
+    items:
+      $ref: '#/definitions/Achat'
+  AchatItem:
+    type: "object"
+    required:
+      - id
+      - prixUnitaire
+      - prixVente
+      - quantite
+      - quantiteAvoir
+      - remise
+    properties:
+      id:
+        type: int
+      prixUnitaire:
+        type: number
+      prixVente:
+        type: number
+      quantite:
+        type: number
+      quantiteAvoir:
+        type: number
+      remise:
+        type: number
+  AchatItems:
+    type: array
+    items:
+      $ref: '#/definitions/AchatItem'
+  Produit:
+    type: "object"
+    required:
+      - id
+      - reference
+      - libelle
+      - barcode
+      - discription
+      - prixAchatMoyen
+      - quantite
+      - seuilAlert
+    properties:
+      id:
+        type: int
+      reference:
+        type: string
+      libelle:
+        type: string
+      barcode:
+        type: string
+      discription:
+        type: string
+      prixAchatMoyen:
+        type: number
+      quantite:
+        type: number
+      seuilAlert:
+        type: number
+  Produits:
+    type: array
+    items:
+      $ref: '#/definitions/Produit'
+
+  Error:
+    type: "object"
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
